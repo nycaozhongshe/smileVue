@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <van-button type="default">默认按钮</van-button>
+    <van-button type="primary">主要按钮</van-button>
+    <van-button type="danger">危险按钮</van-button>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
