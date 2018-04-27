@@ -1,5 +1,5 @@
 import Vue from 'vue'
 
-import { Button } from 'vant';
+import { Row, Col, Button, Swipe, SwipeItem } from 'vant';
 
-Vue.use(Button)
+Vue.use(Row).use(Col).use(Button).use(Swipe).use(SwipeItem);

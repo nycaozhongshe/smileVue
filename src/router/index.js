@@ -10,7 +10,7 @@ export default new Router({
       name: "ShoppingMall",
       component: resolve => require(['@/views/ShoppingMall.vue'], resolve),
       meta: {
-          
+
       }
     }
   ]
