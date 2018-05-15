@@ -7,8 +7,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: "ShoppingMall",
+      name: "index",
       component: resolve => require(['@/views/ShoppingMall.vue'], resolve),
+      meta: {
+
+      }
+    },
+    {
+      path: '/extends',
+      name: "Extends",
+      component: resolve => require(['@/views/Extends.vue'], resolve),
       meta: {
 
       }
