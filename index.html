@@ -3,19 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <title>smilevue</title>
-  </head>
-  <script>
-    //得到手机屏幕的宽度
-      let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
-      //得到html的Dom元素
-      let htmlDom = document.getElementsByTagName('html')[0];
-      //设置根元素字体大小
-      if(htmlWidth>768){
-        htmlWidth =768
+    <title>m.zhaopin</title>
+    <script src="https://g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    <script>
+      window.onload = function () {
+        window.viewportUnitsBuggyfill.init({
+          hacks: window.viewportUnitsBuggyfillHacks
+        });
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+          localStorage.setItem("uaMicromessenger",true);
+        }else{
+          localStorage.setItem("uaMicromessenger", false);
+        }
+        localStorage.setItem("screenWidth", window.screen.width);
+        // var winDPI = window.devicePixelRatio;
+        // var uAgent = window.navigator.userAgent;
+        // var screenHeight = window.screen.height;
+        // var screenWidth = window.screen.width;
+        // var winWidth = window.innerWidth;
+        // var winHeight = window.innerHeight;
+        // alert(
+        //   "Windows DPI:" + winDPI +
+        //   ";\ruAgent:" + uAgent +
+        //   ";\rScreen Width:" + screenWidth +
+        //   ";\rScreen Height:" + screenHeight +
+        //   ";\rWindow Width:" + winWidth +
+        //   ";\rWindow Height:" + winHeight
+        // )
       }
-      htmlDom.style.fontSize = htmlWidth / 20 + 'px';
-  </script>
+    </script>
+  </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->

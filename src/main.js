@@ -1,14 +1,38 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import '@/assets/js/vantComponents.js'
+import store from './store/index'
+
+import MintUI from 'mint-ui'
+import { Toast } from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+Vue.use(MintUI)
+
+Vue.prototype.$toast = (msg)=>{
+  Toast({
+    message: msg,
+    position: 'center',
+    duration: 1000
+  });
+}
+
+import './assets/scss/index.scss'
+import './assets/scss/reset.scss'
+import './assets/font/iconfont.css'
+
+import './components/common/filter'
 
 Vue.config.productionTip = false
-// import 'lib-flexible'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  render: h => h(App)
+  store,
+  components: { App },
+  template: '<App/>'
 })
+
