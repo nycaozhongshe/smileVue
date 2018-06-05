@@ -5,7 +5,6 @@ const router = require('koa-router')({
   prefix: '/weapp'
 })
 const controllers = require('../controllers')
-
-router.post('/commentList', controllers.commentList.post)
+router.get('/login', controllers.login.post)
 
 module.exports = router

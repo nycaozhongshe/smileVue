@@ -4,6 +4,18 @@ const debug = require('debug')('koa-weapp-demo')
 const response = require('./middlewares/response')
 const bodyParser = require('koa-bodyparser')
 const config = require('./config')
+const glob = require('glob')
+
+const { connect, initSchemas } = require('./databases/init')
+
+  //初始化
+  ; (async () => {
+    //链接数据库
+    await connect()
+
+    initSchemas()
+  })()
+
 
 // 使用响应处理中间件
 app.use(response)
